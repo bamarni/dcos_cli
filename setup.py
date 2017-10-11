@@ -34,6 +34,11 @@ setup(
     extras_require={
         'dev': DEV_REQUIRES,
     },
+    entry_points={
+        'console_scripts': [
+            'dcos = dcos_cli.cli.main:main',
+        ],
+    },
     classifiers=[
         'Operating System :: POSIX',
         'Operating System :: MacOS',
