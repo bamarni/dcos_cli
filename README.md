@@ -23,3 +23,7 @@ Then you need to install development dependencies :
 You should now be able to invoke the `dcos` command.
 
 ## Running tests
+
+Once you have the development environment setup, you can run tests with the following command :
+
+    pytest

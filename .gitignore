@@ -1,3 +1,5 @@
+.coverage
+.cache
 env/
 dist/
 *.egg-info/
