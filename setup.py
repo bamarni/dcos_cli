@@ -12,7 +12,7 @@ with open('requirements.txt') as requirements:
         if not line.startswith('#'):
             INSTALL_REQUIRES.append(line)
 
-with open('dev-requirements.txt') as dev_requirements:
+with open('requirements-dev.txt') as dev_requirements:
     DEV_REQUIRES = []
     for line in dev_requirements.readlines():
         if not line.startswith('#'):
