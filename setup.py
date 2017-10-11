@@ -4,7 +4,7 @@ Setup script for DC/OS CLI.
 
 from setuptools import setup
 
-VERSION = '2017.10.10.0'
+from dcos_cli import __version__
 
 with open('requirements.txt') as requirements:
     INSTALL_REQUIRES = []
@@ -23,7 +23,7 @@ with open('README.md') as f:
 
 setup(
     name='DC/OS CLI',
-    version=VERSION,
+    version=__version__,
     author='Bilal Amarni',
     author_email='bamarni@mesosphere.com',
     description='A command-line interface for DC/OS.',
@@ -36,7 +36,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'dcos = dcos_cli.cli.main:main',
+            'dcos = dcos_cli.cli.dcos:dcos',
         ],
     },
     classifiers=[
