@@ -1,15 +1,20 @@
-from dcos_cli.cli.dcos import dcos
+import click
+
+from dcos_cli.cli.cluster.attach import attach
+from dcos_cli.cli.cluster.list import cluster_list
+from dcos_cli.cli.cluster.remove import remove
+from dcos_cli.cli.cluster.rename import rename
+from dcos_cli.cli.cluster.setup import setup
 
 
-@dcos.group()
+@click.group()
 def cluster():
     """Manage your DC/OS clusters."""
     pass
 
 
-# pylint: disable=wrong-import-position
-import dcos_cli.cli.cluster.attach  # noqa: E402,F401
-import dcos_cli.cli.cluster.list  # noqa: E402,F401
-import dcos_cli.cli.cluster.remove  # noqa: E402,F401
-import dcos_cli.cli.cluster.rename  # noqa: E402,F401
-import dcos_cli.cli.cluster.setup  # noqa: E402,F401
+cluster.add_command(attach)
+cluster.add_command(cluster_list)
+cluster.add_command(remove)
+cluster.add_command(rename)
+cluster.add_command(setup)

@@ -1,6 +1,7 @@
 import click
 
 from dcos_cli import __version__
+from dcos_cli.cli.cluster import cluster
 
 
 def print_version(ctx, param, value):
@@ -25,6 +26,4 @@ def dcos(debug):
     assert isinstance(debug, bool)
 
 
-# pylint: disable=wrong-import-position
-# pylint: disable=unused-import
-import dcos_cli.cli.cluster  # noqa: E402,F401
+dcos.add_command(cluster)
