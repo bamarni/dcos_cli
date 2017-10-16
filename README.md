@@ -8,11 +8,11 @@ The DC/OS Command Line Interface (CLI) is a cross-platform command line utility 
 
 ## Development environment
 
-This package requires Python 3.5 and pip. We recommend setting-up a virtual environment, there are various ways to do it.
+This package requires Python 3.6 and pip. We recommend setting-up a virtual environment, there are various ways to do it.
 The simplest one being to use the built-in [venv](https://docs.python.org/3/library/venv.html) module :
 
     # Creates a virtualenv inside an env directory
-    python3.5 -m venv env
+    python3.6 -m venv env
     # Activates the virtualenv
     source env/bin/activate
 
