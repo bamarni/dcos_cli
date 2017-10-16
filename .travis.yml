@@ -13,9 +13,10 @@ matrix:
         - source env/bin/activate
       # end of workaround
 
-python: 3.5
+python: 3.6
 
 install:
+  - python -c "import sys; assert sys.version_info[:2] == (3,6)"
   - make
 
 script:
