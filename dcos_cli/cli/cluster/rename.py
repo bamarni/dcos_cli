@@ -1,7 +1,7 @@
-from dcos_cli.cli.cluster import cluster
+import click
 
 
-@cluster.command()
+@click.command()
 def rename():
     """Rename a cluster."""
     print('Rename a cluster.')

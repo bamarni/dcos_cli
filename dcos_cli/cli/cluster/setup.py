@@ -1,7 +1,7 @@
-from dcos_cli.cli.cluster import cluster
+import click
 
 
-@cluster.command()
+@click.command()
 def setup():
     """Setup a cluster."""
     print('Setup a cluster.')

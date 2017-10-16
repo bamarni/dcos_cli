@@ -4,7 +4,7 @@ deps:
 
 lint:
 	flake8 --verbose dcos_cli/ tests/
-	pylint --disable=missing-docstring,cyclic-import dcos_cli/ tests/
+	pylint --disable=missing-docstring dcos_cli/ tests/
 .PHONY: lint
 
 test: lint

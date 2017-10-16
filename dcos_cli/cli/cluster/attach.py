@@ -1,8 +1,7 @@
+import click
 
-from dcos_cli.cli.cluster import cluster
 
-
-@cluster.command()
+@click.command()
 def attach():
     """Attach to a cluster."""
     print('Attach to a cluster.')

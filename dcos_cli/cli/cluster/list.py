@@ -1,7 +1,7 @@
-from dcos_cli.cli.cluster import cluster
+import click
 
 
-@cluster.command(name='list')
+@click.command(name='list')
 def cluster_list():
     """List clusters."""
     print('List clusters.')
