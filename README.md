@@ -1,4 +1,4 @@
-# DC/OS CLI
+# DC/OS CLI [![Build Status](https://travis-ci.org/bamarni/dcos_cli.svg?branch=master)](https://travis-ci.org/bamarni/dcos_cli)
 
 The DC/OS Command Line Interface (CLI) is a cross-platform command line utility that provides a user-friendly yet powerful way to manage DC/OS clusters.
 
