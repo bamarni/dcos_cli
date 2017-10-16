@@ -14,11 +14,11 @@ The simplest one being to use the built-in [venv](https://docs.python.org/3/libr
     # Creates a virtualenv inside an env directory
     python3.5 -m venv env
     # Activates the virtualenv
-    source bin/env/activate
+    source env/bin/activate
 
 Then you need to install development dependencies :
 
-    pip install -e .[dev]
+    make deps
 
 You should now be able to invoke the `dcos` command.
 
@@ -26,4 +26,4 @@ You should now be able to invoke the `dcos` command.
 
 Once you have the development environment setup, you can run tests with the following command :
 
-    pytest
+    make test
