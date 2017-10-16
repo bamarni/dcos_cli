@@ -1,7 +1,7 @@
-import click
 from click.testing import CliRunner
 
 from dcos_cli.cli.dcos import dcos
+
 
 def test_remove():
     runner = CliRunner()

@@ -1,8 +1,8 @@
-import click
 from click.testing import CliRunner
 
 from dcos_cli import __version__
 from dcos_cli.cli.dcos import dcos
+
 
 def test_version():
     runner = CliRunner()
