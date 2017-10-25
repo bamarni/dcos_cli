@@ -1,3 +1,5 @@
+"""Defines the `dcos cluster rename` subcommand."""
+
 import click
 
 

@@ -1,7 +1,9 @@
+"""Defines the `dcos cluster setup` subcommand."""
+
 import click
 
 
 @click.command()
 def setup():
-    """Setup a cluster."""
+    """Set up a cluster."""
     print('Setup a cluster.')

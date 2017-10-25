@@ -1,3 +1,5 @@
+"""Defines the `dcos cluster remove` subcommand."""
+
 import click
 
 

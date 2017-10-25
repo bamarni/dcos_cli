@@ -1,3 +1,6 @@
+"""Defines the `dcos cluster list` subcommand."""
+
+
 import click
 
 
