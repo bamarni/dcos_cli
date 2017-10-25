@@ -1,3 +1,5 @@
+"""The CLI for DC/OS."""
+
 import click
 
 from dcos_cli import __version__
@@ -5,6 +7,7 @@ from dcos_cli.cli.cluster import cluster
 
 
 def print_version(ctx, param, value):
+    """Print the DC/OS CLI version."""
     # pylint: disable=unused-argument
     if not value or ctx.resilient_parsing:
         return
@@ -23,6 +26,7 @@ def print_version(ctx, param, value):
     help="Print version information.",
 )
 def dcos(debug):
+    """Run the dcos command."""
     assert isinstance(debug, bool)
 
 

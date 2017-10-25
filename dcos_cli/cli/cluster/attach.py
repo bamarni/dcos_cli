@@ -1,3 +1,5 @@
+"""Defines the `dcos cluster attach` subcommand."""
+
 import click
 
 
