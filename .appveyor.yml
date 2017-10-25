@@ -2,10 +2,9 @@ install:
   - SET PATH=C:\\Python36-x64;C:\\Python36-x64\\Scripts;C:\\MinGW\\bin;%PATH%
   # https://stackoverflow.com/questions/12881854/how-to-use-gnu-make-on-windows
   - copy c:\MinGW\bin\mingw32-make.exe c:\MinGW\bin\make.exe
-  - python -c "import sys; assert sys.version_info[:2] == (3,6)
-  - make
+  - make deps
 
 build: false
 
 test_script:
-  - "make test"
+  - make test
