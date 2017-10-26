@@ -15,3 +15,7 @@ lint: check
 test: lint
 	pytest --cov=dcos_cli --cov-fail-under=100 tests/
 .PHONY: test
+
+build:
+	pyinstaller dcos.spec
+.PHONY: build
