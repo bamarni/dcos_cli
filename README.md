@@ -36,3 +36,11 @@ You should now be able to invoke the `dcos` command.
 Once you have the development environment setup, you can run tests with the following command :
 
     make test
+
+## Building the dcos binary
+
+In order to build the `dcos` binary, run the following command :
+
+    make build
+
+The binary will then be available at `./dist/dcos` (or `./dist/dcos.exe` on Windows).
