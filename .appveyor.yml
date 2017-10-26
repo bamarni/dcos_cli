@@ -8,3 +8,7 @@ build: false
 
 test_script:
   - make test
+
+branches:
+  only:
+    - master
