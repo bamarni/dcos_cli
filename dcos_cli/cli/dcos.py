@@ -15,7 +15,19 @@ def print_version(ctx, param, value):
     ctx.exit()
 
 
-@click.group()
+class DCOSCLI(click.MultiCommand):
+    """The main `dcos` command."""
+
+    def list_commands(self, ctx):
+        """Return the list of available DC/OS commands."""
+        return ['cluster']
+
+    def get_command(self, ctx, cmd_name):
+        """Get a given command."""
+        return cluster
+
+
+@click.command(cls=DCOSCLI)
 @click.option('--debug', is_flag=True, help="Enable debug mode.")
 @click.option(
     '--version',
@@ -28,6 +40,3 @@ def print_version(ctx, param, value):
 def dcos(debug):
     """Run the dcos command."""
     assert isinstance(debug, bool)
-
-
-dcos.add_command(cluster)
