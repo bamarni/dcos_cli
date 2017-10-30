@@ -9,7 +9,7 @@ deps: check
 lint: check
 	flake8 --verbose dcos_cli/ tests/
 	pylint --disable=missing-docstring dcos_cli/ tests/
-	pydocstyle --ignore=D104 dcos_cli/
+	pydocstyle --ignore=D104,D203 dcos_cli/
 .PHONY: lint
 
 test: lint
