@@ -13,7 +13,7 @@ lint: check
 .PHONY: lint
 
 test: lint
-	pytest --cov=dcos_cli --cov-fail-under=100 tests/
+	pytest --cov=dcos_cli --cov-fail-under=100  --cov-report term-missing tests/
 .PHONY: test
 
 build:
