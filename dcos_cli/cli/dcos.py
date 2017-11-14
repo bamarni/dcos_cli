@@ -1,9 +1,10 @@
 """The CLI for DC/OS."""
 
+import importlib
+
 import click
 
 from dcos_cli import __version__
-from dcos_cli.cli.cluster import cluster
 
 
 def print_version(ctx, param, value):
@@ -24,7 +25,12 @@ class DCOSCLI(click.MultiCommand):
 
     def get_command(self, ctx, cmd_name):
         """Get a given command."""
-        return cluster
+        try:
+            cmd = importlib.import_module('dcos_cli.cli.'+cmd_name)
+        except ModuleNotFoundError:
+            return None
+
+        return getattr(cmd, cmd_name, None)
 
 
 @click.command(cls=DCOSCLI)
