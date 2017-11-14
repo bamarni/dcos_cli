@@ -33,3 +33,9 @@ def test_version():
     result = runner.invoke(dcos, ['--version'])
     assert result.exit_code == 0
     assert result.output == __version__ + '\n'
+
+
+def test_unexisting_command():
+    runner = CliRunner()
+    result = runner.invoke(dcos, ['make_coffee'])
+    assert result.exit_code != 0
