@@ -3,7 +3,7 @@
 import click
 
 
-@click.command()
-def setup():
+@click.command(name='setup')
+def cluster_setup():
     """Set up a cluster."""
     print('Setup a cluster.')

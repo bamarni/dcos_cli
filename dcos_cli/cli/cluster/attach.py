@@ -3,7 +3,7 @@
 import click
 
 
-@click.command()
-def attach():
+@click.command(name='attach')
+def cluster_attach():
     """Attach to a cluster."""
     print('Attach to a cluster.')
