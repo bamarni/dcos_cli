@@ -17,6 +17,7 @@ Options:
 
 Commands:
   cluster  Manage your DC/OS clusters.
+  config   Manage the DC/OS configuration file.
 """
 
     result = runner.invoke(dcos)
