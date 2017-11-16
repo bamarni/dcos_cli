@@ -1,10 +1,10 @@
 import click
 
-from dcos_cli.cli.cluster.attach import attach
-from dcos_cli.cli.cluster.list import cluster_list
-from dcos_cli.cli.cluster.remove import remove
-from dcos_cli.cli.cluster.rename import rename
-from dcos_cli.cli.cluster.setup import setup
+from .attach import cluster_attach
+from .list import cluster_list
+from .remove import cluster_remove
+from .rename import cluster_rename
+from .setup import cluster_setup
 
 
 @click.group()
@@ -13,8 +13,8 @@ def cluster():
     pass
 
 
-cluster.add_command(attach)
+cluster.add_command(cluster_attach)
 cluster.add_command(cluster_list)
-cluster.add_command(remove)
-cluster.add_command(rename)
-cluster.add_command(setup)
+cluster.add_command(cluster_remove)
+cluster.add_command(cluster_rename)
+cluster.add_command(cluster_setup)

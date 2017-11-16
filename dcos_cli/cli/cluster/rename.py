@@ -3,7 +3,7 @@
 import click
 
 
-@click.command()
-def rename():
+@click.command(name='rename')
+def cluster_rename():
     """Rename a cluster."""
     print('Rename a cluster.')
