@@ -1,12 +1,10 @@
 package cmd
 
 import (
-//	"bufio"
 	"fmt"
-//	"strings"
+	"strings"
 
 	"github.com/dcos/dcos-cli/pkg/config"
-//	"github.com/dcos/dcos-cli/pkg/config/tomlutil"
 	"github.com/spf13/cobra"
 )
 
@@ -25,39 +23,24 @@ to quickly create a Cobra application.`,
 }
 
 func runConfigShowCmd(cmd *cobra.Command, args []string) error {
-	cfg, err := config.FromPath(config.TomlPath)
+	// this is a dummy path for testing purpose
+	cfg, err := config.FromPath("/home/bamarni/.dcos/clusters/456934a6-fc1f-4d52-9419-a4c722abe2da/dcos.toml")
 	if err != nil {
 		return err
 	}
 
-	fmt.Print(cfg)
+	if len(args) == 1 {
+		key := strings.Split(args[0], ".")
+		out, err := cfg.StringAt(key)
+		if err != nil {
+			return err
+		}
+		fmt.Print(out)
+	} else {
+		fmt.Print(cfg.String())
+	}
 
 	return nil
-
-/*
-	// load the TOML config as a tree
-	cfg, err = config.FromPath(config.TomlPath)
-	if err != nil {
-		return err
-	}
-
-	// when an argument is passed, generate from it a slice of the different key sections :
-	//   "core"          -> []string{"core"}
-	//   "core.dcos_url" -> []string{"core", "dcos_url"}
-	keys := []string{}
-	if len(args) == 1 {
-		keys = strings.Split(args[0], ".")
-	}
-
-	// write the tree map into a buffer on top of stdout
-	w := bufio.NewWriter(os.Stdout)
-	if err := tomlutil.WriteTreeTo(w, cfg.Tree, keys); err != nil {
-		return err
-	}
-
-	// no error occured, print the configs
-	return w.Flush()
-	*/
 }
 
 func init() {
